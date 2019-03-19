@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0316)https://d18ky98rnyall9.cloudfront.net/_27df4bcf1283b490a6bbb31cc743911e_home.html?Expires=1552435200&Signature=S3-5s-Ltn3HIbDWkXNZzCw1cV2MG262YpcpQGe8-J38cQBDDej-SrEdjJpultCORPXX1lH3823tju8LOH7-KsUaVUemq34Pguh3Tox1SK3W2E0EHObrg6JnTnRq3-jda6VKJVLTXXObkh7FdXAaAmWEf26eTg9b4LTbSrpcILP8_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+    <div class="container" ng-controller="IndexController">
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align="center">Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+                <div ng-if="!showDish">
+                <h3> {{message}}</h3>
+                </div>
+				 <div class="media"  ng-if="showDish">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.dishdetails({id:dish._id})">
+                        <img class="media-object img-thumbnail"
+                         ng-src={{dish.image}} alt="Uthappizza">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{dish.name}}
+                         <span class="label label-danger">{{dish.label}}</span>
+                         <span class="badge">{{dish.price | currency}}</span></h2>
+                        <p >{{dish.description}}</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align="center">This Month's Promotions</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+				
+                 <div class="media" >
+                    <div class="media-body">
+                        <h2 class="media-heading">{{promotion.name}}</h2>
+                        <p >{{promotion.description}}</p>
+                    </div>
+                     <div class="media-right ">
+                        <a ui-sref="app.dishdetails({id:dish._id})">
+                        <img class="media-object img-thumbnail"
+                         ng-src={{promotion.image}} alt="Uthappizza">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align="center">Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+				   <div class="media" >
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.dishdetails({id:dish._id})">
+                        <img class="media-object img-thumbnail"
+                         ng-src={{leader.image}} alt="Uthappizza">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{leader.name}}
+                            <small>{{leader.designation}}</small>
+                         </h2>
+                        <p >{{leader.description}}</p>
+                       
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</body></html>
